@@ -76,6 +76,7 @@ ERP - Companies
                                     @can("view company")
                                     <a href="{{ route('companies.show', ['company'=>$company->id]) }}" class="btn btn-primary">view</a>
 
+                                    @endcan
                                     @can("edit company")
                                     <a href="{{ route('companies.edit', ['company'=>$company->id]) }}" class="btn btn-warning">edit</a>
 
