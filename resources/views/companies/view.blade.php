@@ -68,7 +68,11 @@ ERP - Dashboard
                     </div>
                    
                     <div style="width: 100%" class="d-flex justify-content-end">
+                        @can("edit company")
                         <a href="{{ route('companies.edit', ['company'=>$company->id]) }}" class="btn btn-warning m-1">edit</a>
+
+                        @endcan
+                        @can("delete company")
                         <form action="{{  route('companies.destroy', ['company'=>$company->id]) }}" method="POST"  class="d-inline-block m-1">
                             @csrf
     
@@ -76,7 +80,9 @@ ERP - Dashboard
     
                             <button type="submit" class="btn btn-danger">delete</button>
     
-                        </form>
+                        </form>   
+                        @endcan
+                     
                     </div>
                  
                    

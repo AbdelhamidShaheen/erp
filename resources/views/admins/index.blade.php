@@ -24,9 +24,12 @@ ERP - Admins
 <div class="row">
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+        @can("create admin")
         <div style="width: 100%" class="d-flex justify-content-start">
             <a href="{{ route('admins.create') }}" class="btn btn-primary mb-1">Add New</a>
         </div>
+        @endcan
+      
       
 
         <div class="card mb-3">
@@ -55,15 +58,24 @@ ERP - Admins
                                     @endforeach
                                 </td>
                                 <td>
+                                    @can("view admin")
                                     <a href="{{ route('admins.show', ['admin'=>$admin->id]) }}" class="btn btn-primary">view</a>
+
+                                    @endcan
+                                    @can("edit admin")
                                     <a href="{{ route('admins.edit', ['admin'=>$admin->id]) }}" class="btn btn-warning">edit</a>
+
+                                    @endcan
+                                    @can("delete admin")
                                     <form action="{{ route('admins.destroy', ['admin'=>$admin->id]) }}" method="POST" class="d-inline-block" >
                                         @csrf
 
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-danger">delete</button>
 
-                                    </form>
+                                    </form>  
+                                    @endcan
+                                  
                                 </td>
                               
                             </tr>

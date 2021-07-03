@@ -24,9 +24,12 @@ ERP - Roles
 <div class="row">
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+        @can("create role")
         <div style="width: 100%" class="d-flex justify-content-start">
             <a href="{{ route('roles.create') }}" class="btn btn-primary mb-1">Add New</a>
-        </div>
+        </div>        
+        @endcan
+     
       
 
         <div class="card mb-3">
@@ -49,9 +52,15 @@ ERP - Roles
                                 <td>{{$role->name}}</td>
                               
                                 <td>
+                                    @can("view role")
                                     <a href="{{ route('roles.show', ['role'=>$role->id]) }}" class="btn btn-primary">view</a>
+
+                                    @endcan
+                                    @can("edit role")
                                     <a href="{{ route('roles.edit', ['role'=>$role->id]) }}" class="btn btn-warning">edit</a>
-                                
+
+                                    @endcan
+                                    @can("delete role")
                                     <form action="{{   route('roles.destroy', ['role'=>$role->id])  }}" method="POST"  class="d-inline-block">
                                         @csrf
                                         @method("delete")
@@ -59,6 +68,9 @@ ERP - Roles
                                         <button type="submit" class="btn btn-danger">delete</button>
 
                                     </form>
+                                    @endcan
+                                
+                                  
                                 </td>
                               
                             </tr>

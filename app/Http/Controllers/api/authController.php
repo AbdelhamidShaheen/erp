@@ -12,7 +12,9 @@ use Validator;
 class authController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('authapi:api', ['except' => ['login']]);
+
+        
     }
 
    

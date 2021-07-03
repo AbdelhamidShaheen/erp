@@ -36,9 +36,12 @@ ERP - Companies
 
     
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+        @can("create company")
         <div style="width: 100%" class="d-flex justify-content-start">
             <a href="{{ route('companies.create') }}" class="btn btn-primary mb-1">Add New</a>
-        </div>
+        </div>  
+        @endcan
+      
       
  
 
@@ -70,8 +73,14 @@ ERP - Companies
                                     {{$company->website}}
                                 </td>
                                 <td>
+                                    @can("view company")
                                     <a href="{{ route('companies.show', ['company'=>$company->id]) }}" class="btn btn-primary">view</a>
+
+                                    @can("edit company")
                                     <a href="{{ route('companies.edit', ['company'=>$company->id]) }}" class="btn btn-warning">edit</a>
+
+                                    @endcan
+                                    @can("delete company")
                                     <form action="{{  route('companies.destroy', ['company'=>$company->id]) }}" method="POST"  class="d-inline-block">
                                         @csrf
 
@@ -79,7 +88,9 @@ ERP - Companies
 
                                         <button type="submit" class="btn btn-danger">delete</button>
 
-                                    </form>
+                                    </form>   
+                                    @endcan
+                                  
                                 </td>
                               
                             </tr>
