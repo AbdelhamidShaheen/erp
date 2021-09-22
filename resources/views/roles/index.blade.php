@@ -48,30 +48,39 @@ ERP - Roles
                         </thead>
                         <tbody>
                             @foreach ($roles  as $role)
+
                             <tr>
                                 <td>{{$role->name}}</td>
-                              
-                                <td>
-                                    @can("view role")
-                                    <a href="{{ route('roles.show', ['role'=>$role->id]) }}" class="btn btn-primary">view</a>
-
-                                    @endcan
-                                    @can("edit role")
-                                    <a href="{{ route('roles.edit', ['role'=>$role->id]) }}" class="btn btn-warning">edit</a>
-
-                                    @endcan
-                                    @can("delete role")
-                                    <form action="{{   route('roles.destroy', ['role'=>$role->id])  }}" method="POST"  class="d-inline-block">
-                                        @csrf
-                                        @method("delete")
-
-                                        <button type="submit" class="btn btn-danger">delete</button>
-
-                                    </form>
-                                    @endcan
-                                
+                            
                                   
-                                </td>
+
+                              <td>
+                                @can("view role")
+                                <a href="{{ route('roles.show', ['role'=>$role->id]) }}" class="btn btn-primary">view</a>
+
+                                @endcan
+                                @if ($role->name!="super admin")
+                                @can("edit role")
+                                <a href="{{ route('roles.edit', ['role'=>$role->id]) }}" class="btn btn-warning">edit</a>
+
+                                @endcan
+                                @can("delete role")
+                                <form action="{{   route('roles.destroy', ['role'=>$role->id])  }}" method="POST"  class="d-inline-block">
+                                    @csrf
+                                    @method("delete")
+
+                                    <button type="submit" class="btn btn-danger ">delete</button>
+
+                                </form>
+                                @endcan
+                            
+                              
+                            </td>
+
+
+
+                              @endif
+                            
                               
                             </tr>
                             @endforeach
@@ -93,8 +102,19 @@ ERP - Roles
         <!-- end card-->
 
     </div>
+  
       
-   
+   <script>
+
+   handleFormCall("form",function(success,element){
+
+    if(success){
+
+        element.parent().parent().remove();
+
+    }
+   });
+   </script>
  
    
 

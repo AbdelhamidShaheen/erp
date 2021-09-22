@@ -113,7 +113,7 @@ class employeesController extends Controller
         //
         $employee=employee::find($id);
 
-        
+
         $employee->first_name = $request->first_name??$employee->first_name;
         $employee->last_name = $request->last_name??$employee->last_name;
         $employee->email = $request->email??$employee->email;
@@ -139,6 +139,10 @@ class employeesController extends Controller
         //
         $employee=employee::find($id);
         $employee->delete();
+          //code...
+          if($request->ajax()){
+            return response()->json("sucess", 200);
+        }
         return redirect()->route('employees.index');
 
     }
