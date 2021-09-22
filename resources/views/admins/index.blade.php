@@ -14,7 +14,7 @@ ERP - Admins
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -29,8 +29,8 @@ ERP - Admins
             <a href="{{ route('admins.create') }}" class="btn btn-primary mb-1">Add New</a>
         </div>
         @endcan
-      
-      
+
+
 
         <div class="card mb-3">
 
@@ -40,7 +40,7 @@ ERP - Admins
                     <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
                         <thead>
                             <tr>
-                               
+
                                 <th>name</th>
                                 <th>email</th>
                                 <th>role</th>
@@ -73,21 +73,21 @@ ERP - Admins
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-danger">delete</button>
 
-                                    </form>  
+                                    </form>
                                     @endcan
-                                  
+
                                 </td>
-                              
+
                             </tr>
                             @endforeach
-                         
+
 
                         </tbody>
                     </table>
                 </div>
                 <!-- end table-responsive-->
 
-              
+
               <div style="width: 100%" class="d-flex justify-content-center">
                 {{$paginator->links()}}
             </div>
@@ -98,10 +98,10 @@ ERP - Admins
         <!-- end card-->
 
     </div>
-      
-   
- 
-   
+
+
+
+
 
 
 <!-- end row -->
@@ -110,9 +110,19 @@ ERP - Admins
 
 
 
+<script>
+
+    handleFormCall("form",function(success,element){
+
+        if(success){
+
+            element.parent().parent().remove();
+
+        }
+       });
+       </script>
 
 
-  
 
 
 

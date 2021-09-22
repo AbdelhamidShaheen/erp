@@ -77,6 +77,7 @@ class rolesController extends Controller
      */
     public function show(ViewRoleRequest $request,$id)
     {
+        
         $data["role"]= $role=Role::find($id);
       
         $data["permissions"]=$role->permissions;
@@ -129,8 +130,17 @@ class rolesController extends Controller
      */
     public function destroy(DeleteRoleRequest $request,$id)
     {
+        
+        
         $role=Role::find($id);
         $role->delete();
+       
+            //code...
+            if($request->ajax()){
+                return response()->json("sucess", 200);
+            }
+     
+        
         return redirect()->route('roles.index');
 
         //

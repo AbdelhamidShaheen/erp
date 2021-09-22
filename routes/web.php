@@ -14,21 +14,20 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', function () {
 
-    return view("index");
     return redirect()->route('dashboard');
 });
 
-Route::get('/fire/notification', function () {
-    try {
-        //code...
-        App\Events\PasswordChanged::dispatch("your password is changed");
+// Route::get('/fire/notification', function () {
+//     try {
+//         //code...
+//         App\Events\PasswordChanged::dispatch("your password is changed");
 
-    } catch (\Throwable $th) {
-        //throw $th;
-    }
+//     } catch (\Throwable $th) {
+//         //throw $th;
+//     }
 
-    return view("index2");
-})->name("test");
+//     return view("index2");
+// })->name("test");
 Route::prefix('erp')->group(function () {
     /**
      * Auth

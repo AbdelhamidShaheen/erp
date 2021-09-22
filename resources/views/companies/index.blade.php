@@ -14,7 +14,7 @@ ERP - Companies
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -34,16 +34,16 @@ ERP - Companies
 <div class="row">
 
 
-    
+
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
         @can("create company")
         <div style="width: 100%" class="d-flex justify-content-start">
             <a href="{{ route('companies.create') }}" class="btn btn-primary mb-1">Add New</a>
-        </div>  
+        </div>
         @endcan
-      
-      
- 
+
+
+
 
         <div class="card mb-3">
 
@@ -53,7 +53,7 @@ ERP - Companies
                     <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
                         <thead>
                             <tr>
-                               
+
                                 <th>name</th>
                                 <th>email</th>
                                 <th>logo</th>
@@ -68,7 +68,7 @@ ERP - Companies
                                 <td>{{$company->email}}</td>
                                 <td>
                                     <img src="{{ asset('/storage').'/'.$company->logo}}" class="img-circle" style="width: 30px; height: 30px;">
-                                </td> 
+                                </td>
                                 <td>
                                     {{$company->website}}
                                 </td>
@@ -89,21 +89,21 @@ ERP - Companies
 
                                         <button type="submit" class="btn btn-danger">delete</button>
 
-                                    </form>   
+                                    </form>
                                     @endcan
-                                  
+
                                 </td>
-                              
+
                             </tr>
                             @endforeach
-                         
+
 
                         </tbody>
                     </table>
                 </div>
                 <!-- end table-responsive-->
 
-              
+
               <div style="width: 100%" class="d-flex justify-content-center">
                 {{$paginator->links()}}
             </div>
@@ -114,10 +114,10 @@ ERP - Companies
         <!-- end card-->
 
     </div>
-      
-   
- 
-   
+
+
+
+
 
 
 <!-- end row -->
@@ -126,9 +126,20 @@ ERP - Companies
 
 
 
+<script>
+
+    handleFormCall("form",function(is_success,data){
+
+     if(is_success){
+         data.parent().parent().remove();
+     }else{
+       alert(data);
+     }
+
+    });
+    </script>
 
 
-  
 
 
 

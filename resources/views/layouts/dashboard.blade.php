@@ -12,11 +12,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Your website">
-    
+
         <!-- Favicon -->
         @include('layouts.includes.header')
-    
-   
+
+
     </head>
 
 <body class="adminbody">
@@ -37,12 +37,12 @@
             <nav class="navbar-custom">
 
                 <ul class="list-inline float-right mb-0">
-                  
-
-            
 
 
-            
+
+
+
+
 
 
                     <li class="list-inline-item dropdown notif">
@@ -64,12 +64,12 @@
                             </a>
 
                             <!-- item-->
-                            
+
                             <a class="dropdown-item notify-item"  href="{{ route('logout') }}" >
                                 <i class="fas fa-sign-out-alt"></i>
                                 <span >logout</span>
                             </a>
-                           
+
                         </div>
                     </li>
 
@@ -116,15 +116,15 @@
             <a href="{{ route('companies.index') }}">View Companies</a>
         </li>
         @endcan
-        
+
         @can('create company')
         <li>
             <a href="{{ route('companies.create') }}">Add Company</a>
-        </li>  
+        </li>
         @endcan
-        
+
     </ul>
-</li> 
+</li>
 
 @endif
 
@@ -148,14 +148,14 @@
             <a href="{{ route('employees.create') }}">Add employee</a>
         </li>
         @endcan
-       
-       
+
+
     </ul>
 </li>
 @endif
-                       
+
                         @if (Auth::user()->hasAnyPermission(['view admin','create admin']))
-    
+
                         <li class="submenu">
                             <a id="tables" href="#">
                                 <i class="fas fa-users-cog"></i>
@@ -171,14 +171,14 @@
                                 @can('create admin')
                                 <li>
                                     <a href="{{ route('admins.create') }}">Add admin</a>
-                                </li>  
+                                </li>
                                 @endcan
-                             
-                             
+
+
                             </ul>
                         </li>
-@endif 
-                   
+@endif
+
 
 @if ((Auth::user()->hasAnyPermission(['view role','create role'])))
 <li class="submenu">
@@ -191,37 +191,37 @@
         @can('view role')
         <li>
             <a href="{{ route('roles.index') }}">View roles</a>
-        </li>  
+        </li>
         @endcan
-        
+
         @can('create role')
         <li>
             <a href="{{ route('roles.create') }}">Add role</a>
-        </li>  
+        </li>
         @endcan
-        
+
     </ul>
-</li> 
+</li>
 @endif
-                  
 
-                       
 
-                      
 
-                    
 
-                     
 
-                      
 
-                    
 
-                    
 
-                    
 
-                   
+
+
+
+
+
+
+
+
+
+
 
                     </ul>
 
@@ -263,7 +263,6 @@
         {{-- @include('layouts.includes.footer') --}}
 
 
-        <script src="{{ asset(' assets/js/modernizr.min.js')}}"></script>
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/moment.min.js') }}"></script>
 
@@ -289,27 +288,10 @@
     <script src="{{ asset('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
 
-    <!-- dataTabled data -->
-    <script src="{{ asset('assets/data/data_datatables.js') }}"></script>
 
-    <script src="assets/plugins/datatables/datatables.min.js"></script>
-
-    <!-- Charts data -->
-    <script src="{{ asset('assets/data/data_charts_dashboard.js') }}"></script>
 
     @include('layouts.includes.footer')
-    <script>
-        $(document).on('ready', function() {
-            // data-tables
-      
 
-            // counter-up
-            $('.counter').counterUp({
-                delay: 10,
-                time: 600
-            });
-        });
-    </script>
     <!-- END Java Script for this page -->
 
 </body>

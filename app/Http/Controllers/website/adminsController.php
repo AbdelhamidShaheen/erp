@@ -21,12 +21,12 @@ class adminsController extends Controller
      */
     public function index(ViewAdminRequest $request)
     {
-        
-        
-    
+
+
+
       $data['admins']=$data["paginator"]=Admin::paginate(10);
-        
-     
+
+
 
 
          return view('admins.index',$data);;
@@ -56,7 +56,7 @@ class adminsController extends Controller
     {
         //
         $admin=Admin::create(["first_name"=>$request->first_name,"last_name"=>$request->last_name,"email"=>$request->email,"password"=>Hash::make($request->password)]);
-     
+
         $admin->assignRole($request->role);
 
 return redirect()->route('admins.index');
@@ -74,7 +74,7 @@ return redirect()->route('admins.index');
         $data["admin"]=$admin=Admin::find($id);
         $data["roles"]=$admin->getRoleNames();
 
-       
+
         return view('admins.view',$data);
 
     }
@@ -133,6 +133,9 @@ return redirect()->route('admins.index');
         //
         $admin=Admin::find($id);
         $admin->delete();
+        if($request->ajax()){
+            return response()->json("sucess",200);
+      }
         return redirect()->route('admins.index');
 
     }

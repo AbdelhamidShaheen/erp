@@ -21,11 +21,11 @@ class companiesController extends Controller
     public function index(ViewCompanyRequest $request)
     {
         //
-        
+
         $data['companies']= $data["paginator"]=Company::paginate(10);
-      
-     
-        
+
+
+
         return view('companies.index',$data);
 
     }
@@ -131,19 +131,21 @@ class companiesController extends Controller
      */
     public function destroy(DeleteCompanyRequest $request,$id)
     {
-        //
+        $status=200;
+        $msg="sucess";
         try {
             //code...
             $company=Company::find($id);
             $company->delete();
         } catch (\Throwable $th) {
             //throw $th;
-
-            $data["errors"]=["detach all emplooyes first"];
-            return redirect()->back()->withErrors($data)->withInput();
+           $status=400;
+           $msg="fail";
         }
-       
+       //code...
+      if($request->ajax()){
+              return response()->json($msg, $status);
+        }
         return redirect()->route('companies.index');
-
     }
 }
