@@ -17,6 +17,7 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
+
 // Route::get('/fire/notification', function () {
 //     try {
 //         //code...
@@ -52,4 +53,16 @@ Route::prefix('erp')->group(function () {
         Route::get('/logout', "website\authController@Logout")->name("logout");
 
     });
+});
+use Nexmo\Laravel\Facade\Nexmo;
+
+Route::get('/send',function(){
+    Nexmo::message()->send(
+        [
+            "from"=>"a",
+            "to"=>"201554584901",
+            "text"=>"sms"
+        ]
+    );
+    return "sms has been send";
 });

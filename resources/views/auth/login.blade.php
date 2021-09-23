@@ -20,7 +20,7 @@
     <div id="main">
 
         <!-- top bar navigation -->
-    
+
 
 
 
@@ -28,7 +28,7 @@
 
                 <div class="container-fluid ">
 
-                 
+
 
 
                     @if ($errors->any())
@@ -48,14 +48,14 @@
                             <div class="card mb-3">
                                 <div class="card-header">
                                     <h3><i class="fas fa-sign-in-alt"></i> login</h3>
-                                   
+
                                 </div>
 
                                 <div class="card-body">
 
                                     <form action="{{ route('PostLogin')}}" method="POST" data-parsley-validate novalidate>
                                         @csrf
-                                       
+
                                         <div class="form-group">
                                             <label for="emailAddress">Email<span class="text-danger">*</span></label>
                                             <input type="email" name="email" data-parsley-trigger="change" required placeholder="Enter email" class="form-control" id="emailAddress">
@@ -64,15 +64,15 @@
                                             <label for="pass1">Password<span class="text-danger">*</span></label>
                                             <input id="pass1" name="password" type="password" placeholder="Password" required class="form-control">
                                         </div>
-                                      
-                                       
-                                      
-                                      
-                                       
+
+
+
+
+
 
                                         <div class="form-group text-right m-b-0">
                                             <button class="btn btn-primary" type="submit">
-                                                Submit
+                                                login
                                             </button>
                                             <button type="reset" class="btn btn-secondary m-l-5">
                                                 Cancel
@@ -87,7 +87,7 @@
 
 
 
-                     
+
 
                     </div>
 
@@ -97,9 +97,9 @@
             </div>
         <!-- END content-page -->
 
-      
 
-     
+
+
 
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 
@@ -108,7 +108,7 @@
 
         <script src="{{ asset('assets/plugins/parsleyjs/parsley.min.js') }}"></script>
 
-     
+
 
     </div>
 <script>
