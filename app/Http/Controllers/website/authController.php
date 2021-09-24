@@ -73,5 +73,16 @@ class authController extends Controller
 
         return redirect()->route('login');
     }
+
+    // public function profile(Request $request){
+
+    //     $admin=$request->user();
+    //     $data["profile"]=$admin;
+    
+    //     return response()->json($data, 200);
+
+      
+    //     return redirect()->route('login');
+    // }
     //
 }

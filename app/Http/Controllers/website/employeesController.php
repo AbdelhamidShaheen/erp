@@ -24,7 +24,7 @@ class employeesController extends Controller
     {
         //
         $data['employees'] = [];
-        $data["paginator"] = employee::paginate(10);
+        $data["paginator"] = employee::paginate(7);
 
         foreach ($data["paginator"] as $employee) {
 

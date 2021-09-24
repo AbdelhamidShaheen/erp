@@ -43,6 +43,7 @@ Route::prefix('erp/{lang}')->group(function () {
      */
     Route::middleware(['auth'])->group(function () {
 
+
         Route::resource('admins', "website\adminsController");
         Route::resource('companies', "website\companiesController");
         Route::resource('employees', "website\\employeesController");

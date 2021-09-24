@@ -24,7 +24,7 @@ class adminsController extends Controller
 
 
 
-      $data['admins']=$data["paginator"]=Admin::paginate(10);
+      $data['admins']=$data["paginator"]=Admin::paginate(7);
 
 
 
