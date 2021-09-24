@@ -22,10 +22,10 @@ class rolesController extends Controller
     public function index(ViewRoleRequest $request)
     {
         //
-      
+
         $data['roles']= $data["paginator"]=Role::paginate(10);
-         
-       
+
+
         return view('roles.index',$data);
 
     }
@@ -38,9 +38,9 @@ class rolesController extends Controller
     public function create(StoreRoleRequest $request)
     {
         //
-        
+
         $data["permissions"]=Permission::all();
-        
+
         return view('roles.create',$data);
 
     }
@@ -54,7 +54,7 @@ class rolesController extends Controller
     public function store(StoreRoleRequest $request)
     {
         //
-     
+
 
 
        $role=Role::create(["name"=>$request->name]);
@@ -77,9 +77,9 @@ class rolesController extends Controller
      */
     public function show(ViewRoleRequest $request,$id)
     {
-        
+
         $data["role"]= $role=Role::find($id);
-      
+
         $data["permissions"]=$role->permissions;
 
         return view('roles.view',$data);
@@ -130,17 +130,17 @@ class rolesController extends Controller
      */
     public function destroy(DeleteRoleRequest $request,$id)
     {
-        
-        
+
+
         $role=Role::find($id);
         $role->delete();
-       
+
             //code...
             if($request->ajax()){
                 return response()->json("sucess", 200);
             }
-     
-        
+
+
         return redirect()->route('roles.index');
 
         //

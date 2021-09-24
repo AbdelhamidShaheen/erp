@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,10 +30,11 @@ Route::get('/', function () {
 
 //     return view("index2");
 // })->name("test");
-Route::prefix('erp')->group(function () {
-    /**
-     * Auth
-     */
+
+Route::prefix('erp/{lang}')->group(function () {
+
+     
+
     Route::get('/login', "website\authController@Login")->name("login");
     Route::post('/login', "website\authController@PostLogin")->name("PostLogin");
 

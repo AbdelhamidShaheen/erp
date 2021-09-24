@@ -38,13 +38,6 @@
 
                 <ul class="list-inline float-right mb-0">
 
-
-
-
-
-
-
-
                     <li class="list-inline-item dropdown notif">
                         <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
                             <img src="{{ asset('assets/images/avatars/admin.png') }}" alt="Profile image" class="avatar-rounded">
@@ -69,6 +62,30 @@
                                 <i class="fas fa-sign-out-alt"></i>
                                 <span >logout</span>
                             </a>
+
+                        </div>
+                    </li>
+                    {{-- change language --}}
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+
+                            {{Str::upper(App::getLocale())}}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+
+                           @foreach (["ar","en"] as $item)
+
+                           <a href="{{ route(Route::currentRouteName(), ['lang'=>$item]) }}" class="dropdown-item notify-item">
+
+                            <span>{{Str::upper($item)}}</span>
+                        </a>
+                           @endforeach
+                            <!-- item-->
+
+
+                            <!-- item-->
+
+
 
                         </div>
                     </li>

@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'login' => 'login',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'هذة البيانات غيرة موجودة بالمنصة',
+    'login' => 'تسجيل الدخول',
+    'password' => 'الرقم السرى غير صحيح',
+    'throttle' => 'محولات تسجيل الدخول كثيرة حاول فى وقت اخر',
 
 ];

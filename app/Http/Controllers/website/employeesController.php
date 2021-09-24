@@ -137,7 +137,9 @@ class employeesController extends Controller
     public function destroy(DeleteEmployeeRequest $request,$id)
     {
         //
+        return $id;
         $employee=employee::find($id);
+
         $employee->delete();
           //code...
           if($request->ajax()){
