@@ -23,7 +23,7 @@ class rolesController extends Controller
     {
         //
       
-        $data['roles']= $data["paginator"]=Role::paginate(10);
+        $data['roles']= $data["paginator"]=Role::paginate(7);
          
        
         return view('roles.index',$data);

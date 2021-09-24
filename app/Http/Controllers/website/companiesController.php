@@ -22,7 +22,7 @@ class companiesController extends Controller
     {
         //
 
-        $data['companies']= $data["paginator"]=Company::paginate(10);
+        $data['companies']= $data["paginator"]=Company::paginate(7);
 
 
 

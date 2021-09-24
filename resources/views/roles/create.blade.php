@@ -61,13 +61,24 @@ ERP - Add Role
                             Sign Permissions
                         </label>
                         <div class="mb-1"></div>
-                        <select class="form-control select2" id="example3" name="permissions[]" multiple="multiple">
+                         <div class="form-group">
+                        @foreach ($permissions as $permission)
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="permissions[]" value="{{$permission->name}}" >
+                            <label class="form-check-label" >{{$permission->name}}</label>
+                          </div>
+                          @endforeach
+
+                        </div> 
+
+                         {{-- <select class="form-control select"  name="permissions[]" multiple data-mdb-clear-button="true">
                             @foreach ($permissions as $permission)
                             <option value="{{$permission->name}}">{{$permission->name}}</option>
 
                             @endforeach
                         
-                        </select>
+                        </select>  --}}
                        
                     </div>
 
