@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{App::getLocale()}}" dir="{{App::getLocale()=='ar'?'rtl':'ltr'}}">
 <head>
     <title>Login</title>
     <meta name="description" content="Dashboard | Nura Admin">

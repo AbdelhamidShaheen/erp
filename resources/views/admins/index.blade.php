@@ -59,11 +59,11 @@ ERP - Admins
                                 </td>
                                 <td>
                                     @can("view admin")
-                                    <a href="{{ route('admins.show', ['admin'=>$admin->id]) }}" class="btn btn-primary">view</a>
+                                    <a href="{{ route('admins.show', ['admin'=>$admin->id]) }}" class="btn btn-primary">{{ trans('form.view') }}</a>
 
                                     @endcan
                                     @can("edit admin")
-                                    <a href="{{ route('admins.edit', ['admin'=>$admin->id]) }}" class="btn btn-warning">edit</a>
+                                    <a href="{{ route('admins.edit', ['admin'=>$admin->id]) }}" class="btn btn-warning">{{ trans('form.edit') }}</a>
 
                                     @endcan
                                     @can("delete admin")
@@ -71,7 +71,7 @@ ERP - Admins
                                         @csrf
 
                                         @method("DELETE")
-                                        <button type="submit" class="btn btn-danger">delete</button>
+                                        <button type="submit" class="btn btn-danger">{{ trans('form.delete') }}</button>
 
                                     </form>
                                     @endcan

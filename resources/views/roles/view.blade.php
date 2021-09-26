@@ -1,8 +1,12 @@
 
+
+
+
 @extends('layouts.dashboard')
 @section('title')
 ERP - Dashboard
 @endsection
+
 @section('breadcrumb')
 
     <div class="col-xl-12">
@@ -15,7 +19,7 @@ ERP - Dashboard
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -23,9 +27,9 @@ ERP - Dashboard
 
 @section('maincontent')
 <div class="row">
-   
 
-    
+
+
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
         <div class="card mb-3">
             <div class="card-header">
@@ -44,46 +48,45 @@ ERP - Dashboard
                             </div>
                         </div>
 
-                
+
                     </div>
 
-                    
-                     
-                           
-                           
-                           
-                              
+
+
+
+
+
+
                                     <label>Permissions :</label>
                                     @foreach ($permissions as $permission)
                                     <div>{{$permission->name}}</div>
-                                   
+
                                     @endforeach
-                          
-                    
-                   
-                    
-                
-                   
+
+
+
+
+
+
                     <div style="width: 100%" class="d-flex justify-content-end">
                         @can("edit role")
                         <a href="{{ route('roles.edit', ['role'=>$role->id]) }}" class="btn btn-warning m-1">edit</a>
-  
+
                         @endcan
                         @can("delete role")
                         <form action="{{  route('roles.destroy', ['role'=>$role->id]) }}" method="POST"  class="d-inline-block m-1">
                             @csrf
-    
+
                             @method("DELETE")
-    
+
                             <button type="submit" class="btn btn-danger">delete</button>
-    
+
                         </form>
                         @endcan
-                       
+
                     </div>
-                 
-                   
-           
+
+
 
             </div>
             <!-- end card-body -->
@@ -94,6 +97,7 @@ ERP - Dashboard
     </div>
     <!-- end col -->
 
+    
 
 <!-- end row -->
 
@@ -103,7 +107,7 @@ ERP - Dashboard
 
 
 
-  
+
 
 
 

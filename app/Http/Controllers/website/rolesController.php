@@ -78,9 +78,14 @@ class rolesController extends Controller
     public function show(ViewRoleRequest $request,$id)
     {
 
+
+
         $data["role"]= $role=Role::find($id);
 
+
+
         $data["permissions"]=$role->permissions;
+
 
         return view('roles.view',$data);
 

@@ -14,7 +14,7 @@ ERP - Edit Role
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -36,9 +36,9 @@ ERP - Edit Role
         <div class="card mb-3">
             <div class="card-header">
                 <h3>Edit Role</h3>
-               
+
             </div>
-          
+
             <div class="card-body">
 
                 <form autocomplete="off" action="{{ route('roles.update', ['role'=>$role->id]) }}" method="POST" >
@@ -52,12 +52,12 @@ ERP - Edit Role
                         </div>
 
                     </div>
-                   
-                 
-                    <div class="form-row">
-                       
 
-                     
+
+                    <div class="form-row">
+
+
+
                         <label >
                             Sign Permissions
                         </label>
@@ -67,23 +67,23 @@ ERP - Edit Role
                             <option value="{{$permission->name}}"  {{$role->hasPermissionTo($permission->name)?"selected":""}}>{{$permission->name}}</option>
 
                             @endforeach
-                        
+
                         </select>
-                       
+
                     </div>
 
-              
+
                     <div class="mb-1"></div>
 
-                   
-                
+
+
                     <button type="submit" class="btn btn-primary">Supmit</button>
                 </form>
 
             </div>
         </div><!-- end card-->
     </div>
-   
+
 </div>
 
 
@@ -91,7 +91,7 @@ ERP - Edit Role
 
 
 
-  
+
 
 
 

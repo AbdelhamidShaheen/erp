@@ -14,7 +14,7 @@ ERP - Edit Admin
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -36,9 +36,9 @@ ERP - Edit Admin
         <div class="card mb-3">
             <div class="card-header">
                 <h3>ADD Admin</h3>
-               
+
             </div>
-          
+
             <div class="card-body">
 
                 <form autocomplete="off" action="{{ route('admins.update',["admin"=>$admin->id]) }}" method="POST" >
@@ -55,10 +55,10 @@ ERP - Edit Admin
                             <label>Last Name</label>
                             <input type="text" class="form-control" name="last_name"  value="{{$admin->last_name}}"  placeholder="Last Name" autocomplete="off" required>
                         </div>
-                      
-                       
+
+
                     </div>
-                   
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Email</label>
@@ -69,7 +69,7 @@ ERP - Edit Admin
                             <input type="number" class="form-control"  name="phone" value="{{$admin->phone}}" placeholder="phone">
                         </div>
                 </div>
-      
+
 
                     <div class="form-group">
                         <label>sign role</label>
@@ -82,16 +82,16 @@ ERP - Edit Admin
                             @endforeach
                         </select>
                     </div>
-                
-                   
-                
-                    <button type="submit" class="btn btn-primary">Supmit</button>
+
+
+
+                    <button type="submit" class="btn btn-primary">{{ trans('form.edit') }}</button>
                 </form>
 
             </div>
         </div><!-- end card-->
     </div>
-   
+
 </div>
 
 
@@ -99,7 +99,7 @@ ERP - Edit Admin
 
 
 
-  
+
 
 
 

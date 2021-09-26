@@ -14,7 +14,7 @@ ERP - Roles
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -27,10 +27,10 @@ ERP - Roles
         @can("create role")
         <div style="width: 100%" class="d-flex justify-content-start">
             <a href="{{ route('roles.create') }}" class="btn btn-primary mb-1">Add New</a>
-        </div>        
+        </div>
         @endcan
-     
-      
+
+
 
         <div class="card mb-3">
 
@@ -40,10 +40,10 @@ ERP - Roles
                     <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
                         <thead>
                             <tr>
-                               
+
                                 <th>name</th>
                                 <th>setting</th>
-                             
+
                             </tr>
                         </thead>
                         <tbody>
@@ -51,8 +51,8 @@ ERP - Roles
 
                             <tr>
                                 <td>{{$role->name}}</td>
-                            
-                                  
+
+
 
                               <td>
                                 @can("view role")
@@ -73,25 +73,25 @@ ERP - Roles
 
                                 </form>
                                 @endcan
-                            
-                              
+
+
                             </td>
 
 
 
                               @endif
-                            
-                              
+
+
                             </tr>
                             @endforeach
-                         
+
 
                         </tbody>
                     </table>
                 </div>
                 <!-- end table-responsive-->
 
-              
+
               <div style="width: 100%" class="d-flex justify-content-center">
                 {{$paginator->links()}}
             </div>
@@ -102,8 +102,8 @@ ERP - Roles
         <!-- end card-->
 
     </div>
-  
-      
+
+
    <script>
 
    handleFormCall("form",function(success,element){
@@ -115,8 +115,8 @@ ERP - Roles
     }
    });
    </script>
- 
-   
+
+
 
 
 <!-- end row -->
@@ -127,7 +127,7 @@ ERP - Roles
 
 
 
-  
+
 
 
 

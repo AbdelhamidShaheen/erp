@@ -14,7 +14,7 @@ ERP - Add Admin
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -35,10 +35,10 @@ ERP - Add Admin
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="card mb-3">
             <div class="card-header">
-                <h3>ADD Admin</h3>
-               
+                <h3>{{ trans('navbar.add_admin)') }}</h3>
+
             </div>
-          
+
             <div class="card-body">
 
                 <form autocomplete="off" action="{{ route('admins.store') }}" method="POST" >
@@ -54,10 +54,10 @@ ERP - Add Admin
                             <label>Last Name</label>
                             <input type="text" class="form-control" name="last_name"  placeholder="Last Name" autocomplete="off" required>
                         </div>
-                      
-                       
+
+
                     </div>
-                   
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Email</label>
@@ -78,8 +78,8 @@ ERP - Add Admin
                             <label>Password Confirmation</label>
                             <input type="password" class="form-control" name="password_confirmation"  placeholder="Password Confirmation" autocomplete="off" required>
                         </div>
-                      
-                       
+
+
                     </div>
 
                     <div class="form-group">
@@ -93,16 +93,16 @@ ERP - Add Admin
                             @endforeach
                         </select>
                     </div>
-                
-                   
-                
-                    <button type="submit" class="btn btn-primary">Supmit</button>
+
+
+
+                    <button type="submit" class="btn btn-primary">{{ trans('form.add') }}</button>
                 </form>
 
             </div>
         </div><!-- end card-->
     </div>
-   
+
 </div>
 
 
@@ -110,7 +110,7 @@ ERP - Add Admin
 
 
 
-  
+
 
 
 

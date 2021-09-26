@@ -66,16 +66,29 @@
                         </div>
                     </li>
                     {{-- change language --}}
+
                     <li class="list-inline-item dropdown notif">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
 
                             {{Str::upper(App::getLocale())}}
                         </a>
+
+                        <?php
+                        //native
+                        $param=Route::current()->parameters();
+                        ?>
+
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
 
                            @foreach (["ar","en"] as $item)
 
-                           <a href="{{ route(Route::currentRouteName(), ['lang'=>$item]) }}" class="dropdown-item notify-item">
+                           <?php
+                            //native
+                           $param['lang']=$item;
+                           ?>
+
+                           {{-- <a href="{{ route(Route::currentRouteName(), ['lang'=>$item]) }}" class="dropdown-item notify-item"> --}}
+                           <a href="{{ route(Route::currentRouteName(),$param) }}" class="dropdown-item notify-item">
 
                             <span>{{Str::upper($item)}}</span>
                         </a>

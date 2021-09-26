@@ -15,7 +15,7 @@ ERP - Dashboard
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -26,7 +26,7 @@ ERP - Dashboard
     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
         <div class="card-box noradius noborder bg-danger">
             <i class="fas fa-building float-right text-white"></i>
-            <h6 class="text-white text-uppercase m-b-20">Companies</h6>
+            <h6 class="text-white text-uppercase m-b-20">{{ trans('navbar.companies') }} </h6>
             <h1 class="m-b-20 text-white counter">{{$companiesnum}}</h1>
         </div>
     </div>
@@ -34,14 +34,14 @@ ERP - Dashboard
     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
         <div class="card-box noradius noborder bg-purple">
             <i class="fas fa-users float-right text-white"></i>
-            <h6 class="text-white text-uppercase m-b-20">Empoyees</h6>
+            <h6 class="text-white text-uppercase m-b-20">{{ trans('navbar.employees') }} </h6>
             <h1 class="m-b-20 text-white counter">{{$empoyeesnum}}</h1>
         </div>
-    </div>  
+    </div>
     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
         <div class="card-box noradius noborder bg-danger">
             <i class="fas fa-users-cog float-right text-white"></i>
-            <h6 class="text-white text-uppercase m-b-20">Admins</h6>
+            <h6 class="text-white text-uppercase m-b-20">{{ trans('navbar.admins') }} </h6>
             <h1 class="m-b-20 text-white counter">{{$adminsnum}}</h1>
         </div>
     </div>
@@ -49,14 +49,14 @@ ERP - Dashboard
     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
         <div class="card-box noradius noborder bg-purple">
             <i class="far fa-newspaper float-right text-white"></i>
-            <h6 class="text-white text-uppercase m-b-20">Roles</h6>
+            <h6 class="text-white text-uppercase m-b-20">{{ trans('navbar.roles') }} </h6>
             <h1 class="m-b-20 text-white counter">{{$rolesnum}}</h1>
         </div>
-    </div> 
+    </div>
      <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
         <div class="card-box noradius noborder bg-purple">
             <i class="far fa-newspaper float-right text-white"></i>
-            <h6 class="text-white text-uppercase m-b-20">Permission</h6>
+            <h6 class="text-white text-uppercase m-b-20">{{ trans('navbar.permissions') }} </h6>
             <h1 class="m-b-20 text-white counter">{{$permissionsnum}}</h1>
         </div>
     </div>
@@ -70,7 +70,7 @@ ERP - Dashboard
 
 
 
-  
+
 
 
 
