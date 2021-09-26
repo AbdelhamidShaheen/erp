@@ -19,11 +19,16 @@ class Localize
      */
     public function handle(Request $request, Closure $next)
     {
-
-
+       
+     
         $lang=in_array($request->lang,["ar","en"])?$request->lang:App::getLocale();
+      
         Url::defaults(['lang'=>$lang]);
+       
         App::setLocale($lang);
+      
+        $request->route()->forgetParameter('lang');
+
         return $next($request);
 
     }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,23 +14,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
+
 Route::get('/', function () {
 
     return redirect()->route('dashboard');
 });
 
 
-// Route::get('/fire/notification', function () {
-//     try {
-//         //code...
-//         App\Events\PasswordChanged::dispatch("your password is changed");
 
-//     } catch (\Throwable $th) {
-//         //throw $th;
-//     }
 
-//     return view("index2");
-// })->name("test");
+
 
 Route::prefix('erp/{lang}')->group(function () {
 
@@ -37,7 +31,7 @@ Route::prefix('erp/{lang}')->group(function () {
 
     Route::get('/login', "website\authController@Login")->name("login");
     Route::post('/login', "website\authController@PostLogin")->name("PostLogin");
-
+  
     /**
      * Resource
      */
@@ -69,3 +63,15 @@ Route::get('/send',function(){
     );
     return "sms has been send";
 });
+
+// Route::get('/fire/notification', function () {
+//     try {
+//         //code...
+//         App\Events\PasswordChanged::dispatch("your password is changed");
+
+//     } catch (\Throwable $th) {
+//         //throw $th;
+//     }
+
+//     return view("index2");
+// })->name("test");
