@@ -56,6 +56,7 @@ class employeesController extends Controller
      */
     public function store(StoreEmployeeRequest $request)
     {
+        
         //
         $employee = new employee();
         $employee->first_name = $request->first_name;

@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{App::getLocale()}}" dir="{{App::getLocale()=='ar'?'rtl':'ltr'}}">
 
     <head>
         <title>
@@ -42,7 +42,7 @@
                         <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
                             <img src="{{ asset('assets/images/avatars/admin.png') }}" alt="Profile image" class="avatar-rounded">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown">
                             <!-- item-->
                             <div class="dropdown-item noti-title">
                                 <h5 class="text-overflow">
@@ -73,19 +73,19 @@
                             {{Str::upper(App::getLocale())}}
                         </a>
 
-                        <?php
-                        //native
+                        @php
                         $param=Route::current()->parameters();
-                        ?>
+                        @endphp
+
 
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
 
                            @foreach (["ar","en"] as $item)
 
-                           <?php
-                            //native
-                           $param['lang']=$item;
-                           ?>
+
+                            @php
+                            $param['lang']=$item;
+                            @endphp
 
                            {{-- <a href="{{ route(Route::currentRouteName(), ['lang'=>$item]) }}" class="dropdown-item notify-item"> --}}
                            <a href="{{ route(Route::currentRouteName(),$param) }}" class="dropdown-item notify-item">

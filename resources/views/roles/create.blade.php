@@ -14,7 +14,7 @@ ERP - Add Role
             <div class="clearfix"></div>
         </div>
 
-      
+
 
     </div>
 
@@ -36,9 +36,9 @@ ERP - Add Role
         <div class="card mb-3">
             <div class="card-header">
                 <h3>ADD Role</h3>
-               
+
             </div>
-          
+
             <div class="card-body">
 
                 <form autocomplete="off" action="{{ route('roles.store') }}" method="POST" >
@@ -51,49 +51,51 @@ ERP - Add Role
                         </div>
 
                     </div>
-                   
-                 
-                    <div class="form-row">
-                       
 
-                     
-                        <label >
-                            Sign Permissions
-                        </label>
+
+                    <div class="form-row">
+
+
+
+
                         <div class="mb-1"></div>
-                         <div class="form-group">
+                        <div class="form-group">
+                            <label >
+                                Sign Permissions
+                            </label>
                         @foreach ($permissions as $permission)
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="permissions[]" value="{{$permission->name}}" >
-                            <label class="form-check-label" >{{$permission->name}}</label>
+                        <div class="form-check ">
+                            <label class="form-check-label" >
+                                 <input class="form-check-input" type="checkbox" name="permissions[]" value="{{$permission->name}}" >{{$permission->name}}
+                            </label>
                           </div>
                           @endforeach
 
-                        </div> 
+                        </div>
 
                          {{-- <select class="form-control select"  name="permissions[]" multiple data-mdb-clear-button="true">
                             @foreach ($permissions as $permission)
                             <option value="{{$permission->name}}">{{$permission->name}}</option>
 
                             @endforeach
-                        
+
                         </select>  --}}
-                       
+
                     </div>
 
-              
+
                     <div class="mb-1"></div>
 
-                   
-                
+
+
                     <button type="submit" class="btn btn-primary">Supmit</button>
                 </form>
 
             </div>
         </div><!-- end card-->
     </div>
-   
+
 </div>
 
 
@@ -101,7 +103,7 @@ ERP - Add Role
 
 
 
-  
+
 
 
 
